@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>HW Week 4 - Crystal Collector</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+</head>
+
+<body>
+    <h1>Crystals Collector</h1>
+    <div id="instructions-text">(Insert instructions here)</div>
+    <br>
+    <div>
+        <span id="targetNumber-text"></span>
+    </div>
+    <br>
+    <div id="wins-losses">
+        <p><span id="result-text"></span></p>
+        <p>Wins:<span id="wins-text"></span></p>
+        <p>Losses:<span id="losses-text"></span></p>
+    </div>
+    <div id="crystals">
+        <button id="c1">Crystal 1</button>
+        <button id="c2">Crsytal 2</button>
+        <button id="c3">Crystal 3</button>
+        <button id="c4">Crystal 4</button>
+    </div>
+    <h2>Your total score is:</h2>
+        <div id="totalScore-text"></div>
+    
+    <script>
+    
+    // Define global variables
+    var wins = 0;
+    var losses = 0;
+    var totalScore = 0;
+    var targetNumber = getRandomnumber(19,120);
+    var c1 = getRandomnumber(1,12);
+    var c2 = getRandomnumber(1,12);
+    var c3 = getRandomnumber(1,12);
+    var c4 = getRandomnumber(1,12);
+
+    // Define global function(s)
+        // Random number is generated for "targetNumber-text"
+            function getRandomnumber(min, max) {
+            return  Math.floor(Math.random() * (max) + min )
+                };
+        // Reset function for when game needs to "restart"
+            function reset() {
+                totalScore = 0;
+                targetNumber = getRandomnumber(19,120);
+                var c1 = getRandomnumber(1,12);
+                var c2 = getRandomnumber(1,12);
+                var c3 = getRandomnumber(1,12);
+                var c4 = getRandomnumber(1,12);
+                $("#totalScore-text").text(totalScore);
+                $("#targetNumber-text").text(targetNumber);
+            };
+
+    // Display random number in "targetNumber-text"
+        $("#targetNumber-text").text(targetNumber);
+    
+    // On click events...
+    // When player clicks on a crystal 1
+    $("#c1").on("click", function() {
+        console.log("c1: " + c1);
+        // console.log($(this).data().crystalvalue)
+        // var c1 = $(this).data().crystalvalue;  
+        if (totalScore === targetNumber) {
+            wins++;
+            $("#wins-text").text(wins);
+            reset();
+        } else if (totalScore > targetNumber) {
+            losses++;
+            $("#losses-text").text(losses);
+            reset();
+        } else {
+       totalScore += c1   ;
+       $("#totalScore-text").text(totalScore);
+        };
+    });
+    // When player clicks on a crystal 2
+    $("#c2").on("click", function() {
+        console.log("c2: " + c2);
+        // console.log($(this).data().crystalvalue)
+        // var c1 = $(this).data().crystalvalue;  
+        if (totalScore === targetNumber) {
+            wins++;
+            $("#wins-text").text(wins);
+            reset();
+        } else if (totalScore > targetNumber) {
+            losses++;
+            $("#losses-text").text(losses);
+            reset();
+        } else {
+       totalScore += c2   ;
+       $("#totalScore-text").text(totalScore);
+        };
+    });
+    // When player clicks on a crystal 3
+    $("#c3").on("click", function() {
+        console.log("c3: " + c3);
+        // console.log($(this).data().crystalvalue)
+        // var c1 = $(this).data().crystalvalue;  
+        if (totalScore === targetNumber) {
+            wins++;
+            $("#wins-text").text(wins);
+            reset();
+        } else if (totalScore > targetNumber) {
+            losses++;
+            $("#losses-text").text(losses);
+            reset();
+        } else {
+       totalScore += c3   ;
+       $("#totalScore-text").text(totalScore);
+        };
+    });
+    // When player clicks on a crystal 4
+    $("#c4").on("click", function() {
+        console.log("c4: " + c4);
+        // console.log($(this).data().crystalvalue)
+        // var c1 = $(this).data().crystalvalue;  
+        if (totalScore === targetNumber) {
+            wins++;
+            $("#wins-text").text(wins);
+            reset();
+        } else if (totalScore > targetNumber) {
+            losses++;
+            $("#losses-text").text(losses);
+            reset();
+        } else {
+       totalScore += c4   ;
+       $("#totalScore-text").text(totalScore);
+        };
+    });
+
+
+    
+        // Value of crystal is "added" to "totalScore-text"
+        // "totalScore-text" is compared with "randomNumber-text" to until win or loss is determined.
+            // If "totalScore-text" is less than "randomNumber-text"
+                // Then keep going
+                // If "totalScore-text" is equal to "randomNumber-text"
+                    // Then increase wins by 1
+                    // Display "You win!" in "result-text"
+                    // Restart game
+                    //If "totalScore-text" is greater than "randomNumber-text"
+                        // Then increase losses by 1
+                        // Display "You lose!" in "result-text"
+                        // Restart game
+
+    </script>
+
+<script src="assets/javascript/game.js"></script>
+
+</body>
+</html>
