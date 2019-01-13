@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>HW Week 4 - Crystal Collector</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Google Font Links-->
+    <link href="https://fonts.googleapis.com/css?family=Boogaloo|Caveat|Julius+Sans+One" rel="stylesheet">
     <!-- Bootstrap CSS Link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-     <!-- Personal CSS Link -->
+    <!-- Personal CSS Link -->
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
     <!-- JQuery Link -->
     <script src="https://code.jquery.com/jquery.js"></script>
@@ -19,7 +21,10 @@
         <h1>Crystal Collector</h1>
         <div class="instructions-styling" id="instructions-text">
             <p>
-                You will be given a <strong>random number</strong> at the start of the game. Using the four crystals below, each with a hidden value, click on each to try and match the random number. Each click will add to your current total score.
+                You will be given a <strong>random number</strong> at the start of the game. 
+            </p>
+            <p>
+                Using the four crystals below, each with a hidden value, click on any one to discover it's value;each click will add to your current total score.
             </p>
             <p>
                 <strong>Win</strong> by matching your total score to the random number. <Strong>Lose</Strong> by exceeding the random number. 
@@ -32,15 +37,13 @@
             <span id="targetNumber-text"></span>
         </div>
         <div class="container" id="wins-losses">
-            <div class="row">
-                <p><span id="results-text"></span></p>
-            </div>
+            <p><span id="results-text"></span></p>
             <div class="row">
                 <div class="col-6">
-                    <p>Wins:<span id="wins-text"></span></p>
+                    <p>Wins:&nbsp;<span id="wins-text"></span></p>
                 </div>
                 <div class="col-6">
-                    <p>Losses:<span id="losses-text"></span></p>
+                    <p>Losses:&nbsp;<span id="losses-text"></span></p>
                 </div>
         </div>
         </div>
