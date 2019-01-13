@@ -19,7 +19,7 @@
     </div>
     <br>
     <div id="wins-losses">
-        <p><span id="result-text"></span></p>
+        <p><span id="results-text"></span></p>
         <p>Wins:<span id="wins-text"></span></p>
         <p>Losses:<span id="losses-text"></span></p>
     </div>
@@ -49,8 +49,26 @@
             function getRandomnumber(min, max) {
             return  Math.floor(Math.random() * (max) + min )
                 };
+        // Create function that compares the "targetNumber" and "totalScore" to determine how to proceed
+        function scoreFunction() { 
+            if (totalScore === targetNumber) {
+                wins++;
+                $("#results-text").text("You won! You must be good with numbers...");
+                $("#wins-text").text(wins);
+                reset();
+            } else if (totalScore > targetNumber) {
+                losses++;
+                $("#results-text").text("You lost! Try again...I dare you!");
+                $("#losses-text").text(losses);
+                reset();
+            } else {
+        // totalScore += c1   ;
+        // $("#totalScore-text").text(totalScore);
+            };
+        };
         // Reset function for when game needs to "restart"
             function reset() {
+                $("#result-text").text("");
                 totalScore = 0;
                 targetNumber = getRandomnumber(19,120);
                 var c1 = getRandomnumber(1,12);
@@ -65,93 +83,34 @@
         $("#targetNumber-text").text(targetNumber);
     
     // On click events...
-    // When player clicks on a crystal 1
-    $("#c1").on("click", function() {
-        console.log("c1: " + c1);
-        // console.log($(this).data().crystalvalue)
-        // var c1 = $(this).data().crystalvalue;  
-        if (totalScore === targetNumber) {
-            wins++;
-            $("#wins-text").text(wins);
-            reset();
-        } else if (totalScore > targetNumber) {
-            losses++;
-            $("#losses-text").text(losses);
-            reset();
-        } else {
-       totalScore += c1   ;
-       $("#totalScore-text").text(totalScore);
-        };
-    });
-    // When player clicks on a crystal 2
-    $("#c2").on("click", function() {
-        console.log("c2: " + c2);
-        // console.log($(this).data().crystalvalue)
-        // var c1 = $(this).data().crystalvalue;  
-        if (totalScore === targetNumber) {
-            wins++;
-            $("#wins-text").text(wins);
-            reset();
-        } else if (totalScore > targetNumber) {
-            losses++;
-            $("#losses-text").text(losses);
-            reset();
-        } else {
-       totalScore += c2   ;
-       $("#totalScore-text").text(totalScore);
-        };
-    });
-    // When player clicks on a crystal 3
-    $("#c3").on("click", function() {
-        console.log("c3: " + c3);
-        // console.log($(this).data().crystalvalue)
-        // var c1 = $(this).data().crystalvalue;  
-        if (totalScore === targetNumber) {
-            wins++;
-            $("#wins-text").text(wins);
-            reset();
-        } else if (totalScore > targetNumber) {
-            losses++;
-            $("#losses-text").text(losses);
-            reset();
-        } else {
-       totalScore += c3   ;
-       $("#totalScore-text").text(totalScore);
-        };
-    });
-    // When player clicks on a crystal 4
-    $("#c4").on("click", function() {
-        console.log("c4: " + c4);
-        // console.log($(this).data().crystalvalue)
-        // var c1 = $(this).data().crystalvalue;  
-        if (totalScore === targetNumber) {
-            wins++;
-            $("#wins-text").text(wins);
-            reset();
-        } else if (totalScore > targetNumber) {
-            losses++;
-            $("#losses-text").text(losses);
-            reset();
-        } else {
-       totalScore += c4   ;
-       $("#totalScore-text").text(totalScore);
-        };
-    });
-
-
-    
-        // Value of crystal is "added" to "totalScore-text"
-        // "totalScore-text" is compared with "randomNumber-text" to until win or loss is determined.
-            // If "totalScore-text" is less than "randomNumber-text"
-                // Then keep going
-                // If "totalScore-text" is equal to "randomNumber-text"
-                    // Then increase wins by 1
-                    // Display "You win!" in "result-text"
-                    // Restart game
-                    //If "totalScore-text" is greater than "randomNumber-text"
-                        // Then increase losses by 1
-                        // Display "You lose!" in "result-text"
-                        // Restart game
+        // When player clicks on a Crystal 1
+        $("#c1").on("click", function() {
+            console.log("c1: " + c1); 
+            totalScore += c1   ;
+            $("#totalScore-text").text(totalScore);
+            scoreFunction();
+        });
+        // When player clicks on a Crystal 2
+        $("#c2").on("click", function() {
+            console.log("c2: " + c2);
+            totalScore += c2   ;
+            $("#totalScore-text").text(totalScore);
+            scoreFunction();
+        });
+        // When player clicks on a Crystal 3
+        $("#c3").on("click", function() {
+            console.log("c3: " + c3);
+            totalScore += c3  ;
+            $("#totalScore-text").text(totalScore);
+            scoreFunction();
+        });
+        // When player clicks on a Crystal 4
+        $("#c4").on("click", function() {
+            console.log("c4: " + c4);
+            totalScore += c4  ;
+            $("#totalScore-text").text(totalScore);
+            scoreFunction();
+        });
 
     </script>
 
