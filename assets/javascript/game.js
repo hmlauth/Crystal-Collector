@@ -8,6 +8,10 @@ var c2 = getRandomnumber(1,12);
 var c3 = getRandomnumber(1,12);
 var c4 = getRandomnumber(1,12);
 
+// Style HTML using jQuery
+    // Add class to images to apply styling
+    $("img").addClass("crystal-image");
+    
 // Define global function(s)
     // Random number is generated for "targetNumber-text"
         function getRandomnumber(min, max) {
@@ -69,4 +73,3 @@ var c4 = getRandomnumber(1,12);
         totalScore += c4  ;
         scoreFunction();
     });
-

@@ -5,32 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>HW Week 4 - Crystal Collector</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS Link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+     <!-- Personal CSS Link -->
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
-    <!-- JQuery -->
+    <!-- JQuery Link -->
     <script src="https://code.jquery.com/jquery.js"></script>
 </head>
 
 <body>
-    <h1>Crystals Collector</h1>
-    <div id="instructions-text">(Insert instructions here)</div>
-    <br>
-    <div>
-        <span id="targetNumber-text"></span>
-    </div>
-    <div id="wins-losses">
-        <p>Results:<span id="results-text"></span></p>
-        <p>Wins:<span id="wins-text"></span></p>
-        <p>Losses:<span id="losses-text"></span></p>
-    </div>
-    <div id="crystals">
-        <button id="c1">Crystal 1</button>
-        <button id="c2">Crystal 2</button>
-        <button id="c3">Crystal 3</button>
-        <button id="c4">Crystal 4</button>
-    </div>
-    <h2>Your total score is:</h2>
-        <div id="totalScore-text"></div>
 
+    <div class="container">
+        <h1>Crystal Collector</h1>
+        <div class="instructions-styling" id="instructions-text">
+            <p>
+                You will be given a <strong>random number</strong> at the start of the game. Using the four crystals below, each with a hidden value, click on each to try and match the random number. Each click will add to your current total score.
+            </p>
+            <p>
+                <strong>Win</strong> by matching your total score to the random number. <Strong>Lose</Strong> by exceeding the random number. 
+            </p>
+            <p>
+                <em>Remember... Each time the game starts, the values of each crystal change too!</em> 
+            </p>
+        </div>
+        <div class="targetNumber-container">
+            <span id="targetNumber-text"></span>
+        </div>
+        <div class="container" id="wins-losses">
+            <div class="row">
+                <p><span id="results-text"></span></p>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <p>Wins:<span id="wins-text"></span></p>
+                </div>
+                <div class="col-6">
+                    <p>Losses:<span id="losses-text"></span></p>
+                </div>
+        </div>
+        </div>
+        <div id="crystals">
+            <button id="c1"><img src="assets/images/c1-BlueCrystal.jpg" alt="First Crystal - Blue"></button>
+            <button id="c2"><img src="assets/images/c2-YellowCrystal.jpg" alt="Second Crystal - Yellow"></button>
+            <button id="c3"><img src="assets/images/c3-EmeraldCrystal.jpg" alt="Third Crystal - Emerald"></button>
+            <button id="c4"><img src="assets/images/c4-Diamond.jpg" alt="Fourth Crystal - Diamond"></button>
+        </div>
+        <h2>Your total score is:</h2>
+            <div id="totalScore-text"></div>
+    </div>
 <script src="assets/javascript/game.js"></script>
 
 </body>

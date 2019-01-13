@@ -1,0 +1,44 @@
+* {
+    text-align: center;
+    background-color: white;
+}
+
+h1 {
+
+}
+
+.instructions-styling {
+  padding: 10px;
+}
+
+.targetNumber-container {
+    margin: 20px;
+}
+
+    #targetNumber-text {
+        font-size: 40px;
+        border: 10px rgb(17, 0, 255);
+        border-style: inset;
+        padding: 10px 20px 10px 20px;
+    }
+
+#wins-losses {
+    font-style: italic;
+    padding: 20px;
+}
+
+button {
+    margin: 10px;
+}
+
+.crystal-image {
+    height: 100px;
+}
+
+#totalScore-text {
+    font-size: 50px;
+}
+
+h2 {
+    padding: 20px;
+}
