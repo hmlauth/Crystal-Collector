@@ -1,2 +1,2 @@
-# unit-4-game
-HW Week 4 - Learning jQuery (Crystal Collector)
+# Crytal Collector
+JavaScript to jQuery i.e. coding just got way more fun and dynamic! Test your mining abilities by remembering which crystals have which value while simutaneously and dynamically updating the HTML page with the jQuery library.
